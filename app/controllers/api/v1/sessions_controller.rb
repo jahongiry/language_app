@@ -1,0 +1,22 @@
+module Api
+  module V1
+    class SessionsController < ApplicationController
+      def create
+        @user = User.find_by(email: params[:email]) || User.find_by(phone_number: params[:phone_number])
+
+        if @user && @user.valid_password?(params[:password])
+          token = generate_token(@user.id)
+          render json: { user: @user, token: token }
+        else
+          render json: { error: 'Invalid email/phone number or password' }, status: :unauthorized
+        end
+      end
+
+      private
+
+      def generate_token(user_id)
+        JWT.encode({ user_id: user_id }, Rails.application.secrets.secret_key_base)
+      end
+    end
+  end
+end
