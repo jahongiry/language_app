@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  before_action :authenticate_request, unless: :signup_request?
+  before_action :authenticate_request, unless: :signup_request?, unless: :login_request?
 
   private
 
@@ -17,6 +17,10 @@ class ApplicationController < ActionController::API
 
   def signup_request?
     params[:controller] == 'api/v1/users' && params[:action] == 'create'
+  end
+
+  def login_request?
+    params[:controller] == 'api/v1/sessions' && params[:action] == 'create'
   end
 
   def current_user

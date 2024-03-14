@@ -16,6 +16,15 @@ POST /api/v1/users
 }
 ```
 
+POST /api/v1/login
+
+```
+{
+  "email": "teacher@gmail.com",
+  "password": "teacher123"
+}
+```
+
 PATCH/PUT /api/v1/users/:id
 
 DELETE /api/v1/users/:id

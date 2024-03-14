@@ -1,7 +1,8 @@
 module Api
   module V1
     class LessonsController < ApplicationController
-      before_action :set_lesson, only: [:show, :update, :destroy]
+      before_action :authorize_teacher, only: [:show, :create, :update, :destroy]
+      before_action :set_lesson, only: [:show]
 
       # GET /api/v1/lessons
       def index
@@ -41,6 +42,12 @@ module Api
       end
 
       private
+
+      def authorize_teacher
+        unless current_user&.teacher?
+          render json: { error: 'Unauthorized. Only teachers can create lessons.' }, status: :unauthorized
+        end
+      end
 
       # Use callbacks to share common setup or constraints between actions.
       def set_lesson
