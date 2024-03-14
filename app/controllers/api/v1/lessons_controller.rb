@@ -1,12 +1,12 @@
 module Api
   module V1
     class LessonsController < ApplicationController
-      before_action :authorize_teacher, only: [:show, :create, :update, :destroy]
+      before_action :authorize_teacher, only: [:create, :update, :destroy]
       before_action :set_lesson, only: [:show]
 
       # GET /api/v1/lessons
       def index
-        @lessons = current_user.lessons
+        @lessons = Lesson.all
         render json: @lessons
       end
 

@@ -54,3 +54,23 @@ POST /api/v1/lessons
 PATCH/PUT /api/v1/lessons/:id
 
 DELETE /api/v1/lessons/:id
+
+\*\* Reading
+
+POST /api/v1/lessons/1/text_question_sets
+
+{
+"text_question_set": {
+"text": "Your text here",
+"lesson_id": 1
+}
+}
+
+POST /api/v1/questions
+
+{
+"question": {
+"text": "What is the capital of France?",
+"text_question_set_id": 1
+}
+}

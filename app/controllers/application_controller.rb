@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  before_action :authenticate_request, unless: :signup_request?, unless: :login_request?
+  before_action :authenticate_request, unless: :signup_or_login_request?
 
   private
 
@@ -13,6 +13,10 @@ class ApplicationController < ActionController::API
     rescue ActiveRecord::RecordNotFound
       render json: { error: 'User not found' }, status: :unauthorized
     end
+  end
+
+  def signup_or_login_request?
+    signup_request? || login_request?
   end
 
   def signup_request?
