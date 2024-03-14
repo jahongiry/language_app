@@ -74,3 +74,21 @@ POST /api/v1/questions
 "text_question_set_id": 1
 }
 }
+
+POST /api/v1/user_answers
+
+{
+"user_answer": {
+"text": "This is my answer",
+"question_id": 1
+}
+}
+
+POST /api/v1/user_answers/{user_answer_id}/answer_feedback
+
+{
+"answer_feedback": {
+"score": 10,
+"comment": "Great answer!"
+}
+}

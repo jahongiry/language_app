@@ -6,7 +6,9 @@ Rails.application.routes.draw do
         resources :text_question_sets
       end
       resources :questions
-      resources :user_answers
+      resources :user_answers do
+        resource :answer_feedback, only: [:create, :update]
+      end
       post '/login', to: 'sessions#create'
     end
   end

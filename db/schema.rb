@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_14_102607) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_14_230909) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answer_feedbacks", force: :cascade do |t|
+    t.integer "score"
+    t.text "comment"
+    t.bigint "user_answer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_answer_id"], name: "index_answer_feedbacks_on_user_answer_id"
+  end
 
   create_table "lessons", force: :cascade do |t|
     t.integer "index"
@@ -66,6 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_14_102607) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answer_feedbacks", "user_answers"
   add_foreign_key "lessons", "users"
   add_foreign_key "questions", "text_question_sets"
   add_foreign_key "text_question_sets", "lessons"
