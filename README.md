@@ -1,24 +1,18 @@
-# README
+# Documentation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+GET /api/v1/users
 
-Things you may want to cover:
+GET /api/v1/users/:id
 
-* Ruby version
+POST /api/v1/users
 
-* System dependencies
+{
+"user": {
+"email": "example@example.com",
+"password": "secretpassword"
+}
+}
 
-* Configuration
+PATCH/PUT /api/v1/users/:id
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+DELETE /api/v1/users/:id
