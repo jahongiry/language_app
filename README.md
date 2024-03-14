@@ -29,6 +29,10 @@ PATCH/PUT /api/v1/users/:id
 
 DELETE /api/v1/users/:id
 
+teacher:
+email = 'teacher@gmail.com'
+password = 'teacher123'
+
 \*\* Lessons
 
 GET /api/v1/lessons
