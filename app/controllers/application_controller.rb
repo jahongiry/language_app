@@ -18,4 +18,8 @@ class ApplicationController < ActionController::API
   def signup_request?
     params[:controller] == 'api/v1/users' && params[:action] == 'create'
   end
+
+  def current_user
+    @current_user
+  end
 end
