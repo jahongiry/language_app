@@ -1,6 +1,6 @@
 databases:
   - name: mysite
-    databaseName: mysite_emes
+    databaseName: mysite
     user: mysite
     plan: free
 
