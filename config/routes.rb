@@ -4,7 +4,9 @@ Rails.application.routes.draw do
       resources :users
       resources :lessons do
         resources :text_question_sets
-        resources :media_items, only: [:index, :show, :create, :update, :destroy]
+        resources :media_items, only: [:index, :show, :create, :update, :destroy] do
+          resources :translations, only: [:index, :show, :create, :update, :destroy]
+        end
       end
       resources :questions
       resources :user_answers do

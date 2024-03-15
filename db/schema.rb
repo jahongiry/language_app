@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_14_234549) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_15_015351) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -108,10 +108,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_14_234549) do
 
   create_table "translations", force: :cascade do |t|
     t.bigint "media_item_id", null: false
-    t.string "word"
-    t.string "translation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.json "array_of_objects", default: "[]"
     t.index ["media_item_id"], name: "index_translations_on_media_item_id"
   end
 
