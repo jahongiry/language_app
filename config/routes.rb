@@ -6,6 +6,7 @@ Rails.application.routes.draw do
         resources :text_question_sets
         resources :media_items, only: [:index, :show, :create, :update, :destroy] do
           resources :translations, only: [:index, :show, :create, :update, :destroy]
+          resources :multiple_questions, only: [:index, :show, :create, :update, :destroy]
         end
       end
       resources :questions
