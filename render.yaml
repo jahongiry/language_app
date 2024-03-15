@@ -1,16 +1,16 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: language_app_engy
+    databaseName: language_app_engy
+    user: language_app_engy_user
     plan: free
 
 services:
   - type: web
-    name: mysite
+    name: language_app
     runtime: ruby
     plan: free
     buildCommand: './bin/render-build.sh'
-    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    preDeployCommand: 'bundle exec rails db:migrate' # preDeployCommand only available on paid instance types
     startCommand: 'bundle exec rails server'
     envVars:
       - key: DATABASE_URL
