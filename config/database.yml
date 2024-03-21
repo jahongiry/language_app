@@ -18,7 +18,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: ec2-16-16-144-200.eu-north-1.compute.amazonaws.com
+  host: db
   username: postgres
   password: password
   pool: 5
