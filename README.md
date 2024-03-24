@@ -92,3 +92,60 @@ POST /api/v1/user_answers/{user_answer_id}/answer_feedback
 "comment": "Great answer!"
 }
 }
+
+\*\* Media
+
+GET /api/v1/lessons/:lesson_id/media_items/:id
+
+POST /api/v1/lessons/:lesson_id/media_items
+
+{
+"url": "http://localhost:3000/api/v1/lessons/1/media_items",
+"method": "POST",
+"header": [
+{
+"key": "Content-Type",
+"value": "application/json"
+}
+],
+"body": {
+"mode": "raw",
+"raw": "{ \"media_item\": { \"media_type\": \"link\", \"media_link\": \"http://example.com\" } }"
+}
+}
+
+{
+"url": "http://localhost:3000/api/v1/lessons/1/media_items",
+"method": "POST",
+"header": [
+{
+"key": "Content-Type",
+"value": "multipart/form-data"
+}
+],
+"body": {
+"mode": "form-data",
+"form-data": [
+{
+"key": "media_item[media_type]",
+"value": "image",
+"type": "text"
+},
+{
+"key": "media_item[media_link]",
+"type": "file",
+"src": "/path/to/your/image.jpg"
+}
+]
+}
+}
+
+PATCH/PUT /api/v1/lessons/:lesson_id/media_items/:id
+
+DELETE /api/v1/lessons/:lesson_id/media_items/:id
+
+GET /api/v1/lessons/:lesson_id/media_items/:media_item_id/multiple_questions
+
+POST /api/v1/lessons/:lesson_id/media_items/:media_item_id/multiple_questions
+PATCH/PUT /api/v1/lessons/:lesson_id/media_items/:media_item_id/multiple_questions/:id
+DELETE /api/v1/lessons/:lesson_id/media_items/:media_item_id/multiple_questions/:id
