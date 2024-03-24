@@ -9,11 +9,14 @@ POST /api/v1/users
 
 ```
 {
-"user": {
-"email": "example@example.com",
-"password": "secretpassword"
+    "user": {
+        "email": "example@example.com",
+        "password": "yourpassword",
+        "name": "John",
+        "surname": "Doe"
+    }
 }
-}
+
 ```
 
 POST /api/v1/login

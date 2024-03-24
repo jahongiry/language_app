@@ -50,7 +50,7 @@ module Api
 
       # Only allow a trusted parameter "white list" through.
       def user_params
-        params.require(:user).permit(:email, :password)
+        params.require(:user).permit(:email, :password, :name, :surname)
       end
 
       # Generate JWT token
