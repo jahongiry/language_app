@@ -11,20 +11,21 @@ module Api
       end
 
       # GET /api/v1/lessons/:id
-    def show
-        lesson = Lesson.includes(media_items: { translations: {}, multiple_questions: :answers }).find(params[:id])
-        render json: lesson, include: { 
-          media_items: { 
-            include: { 
-              translations: {}, 
-              multiple_questions: { 
-                include: { 
-                  answers: { except: :correct }
-                } 
+      def show
+          lesson = Lesson.includes(media_items: { translations: {}, multiple_questions: :answers }, text_question_sets: {}).find(params[:id])
+          render json: lesson, include: {
+            media_items: {
+              include: {
+                translations: {},
+                multiple_questions: {
+                  include: {
+                    answers: { except: :correct }
+                  }
+                }
               }
-            } 
-          } 
-        }
+            },
+            text_question_sets: {}
+          }
       end
 
       # POST /api/v1/lessons
