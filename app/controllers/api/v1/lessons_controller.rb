@@ -2,7 +2,7 @@ module Api
   module V1
     class LessonsController < ApplicationController
       before_action :authorize_teacher, only: [:create, :update, :destroy]
-      before_action :set_lesson, only: [:show]
+      before_action :set_lesson, only: [:show, :destroy, :update]
 
       # GET /api/v1/lessons
       def index
