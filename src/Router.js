@@ -12,6 +12,7 @@ import { Box, Center, Flex, Loader } from "@mantine/core";
 import { useLoader, useUser } from "./redux/selectors";
 import Lessons from "./page/lessons";
 import Login from "./page/admin/login";
+import About from "./page/about";
 
 const routes = [
   {
@@ -26,7 +27,10 @@ const routes = [
     path: "/lessons",
     element: <Lessons />,
   },
-
+  {
+    path: "/about",
+    element: <About />,
+  },
   {
     path: "*",
     element: <Navigate to="/login" />,

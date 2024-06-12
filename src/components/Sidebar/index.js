@@ -4,11 +4,12 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import classes from "./style.module.css";
 import { setUser } from "../../redux/userSlice";
-import { Dashboard, Room, LogOut } from "../icon";
+import { Dashboard, Room, LogOut, AboutIcon } from "../icon";
 
 const tabs = [
   { link: "/", label: "Users", icon: Dashboard },
   { link: "/lessons", label: "Lessons", icon: Room },
+  { link: "/about", label: "About", icon: AboutIcon },
 ];
 
 export default function Sidebar() {
