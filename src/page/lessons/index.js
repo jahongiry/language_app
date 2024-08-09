@@ -57,10 +57,10 @@ const Lessons = () => {
           </Flex>
         </Button>
         <ModalScreen
-          title={"Add new lessons"}
+          title={"Add a new lesson"}
           btn_title={
             <Flex align={"center"} gap={10}>
-              <PlusIcon fill="#fff" /> <span>Add new lessons</span>
+              <PlusIcon fill="#fff" /> <span>Add a new lesson</span>
             </Flex>
           }
           body={({ close }) => (

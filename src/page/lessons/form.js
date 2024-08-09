@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Box, Button, Group, Input, Textarea } from "@mantine/core";
 import { useForm } from "@mantine/form";
 // import { postRequest } from "../../services/api";
@@ -5,7 +6,6 @@ import { useForm } from "@mantine/form";
 import { useUser } from "../../redux/selectors";
 import { postRequest, putRequest } from "../../services/api";
 import { toast } from "react-toastify";
-import { useState } from "react";
 
 const inputs = [
   {
@@ -15,7 +15,7 @@ const inputs = [
   },
   {
     name: "description",
-    label: "Objectivs",
+    label: "Objectives",
     as: Textarea,
     minHeight: 200,
   },

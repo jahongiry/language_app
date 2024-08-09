@@ -164,7 +164,7 @@ export default function TableComponent({
           <Table.Th>ID</Table.Th>
           <Table.Th>Index</Table.Th>
           <Table.Th>Title</Table.Th>
-          <Table.Th>Objectivs</Table.Th>
+          <Table.Th>Objectives</Table.Th>
           <Table.Th>Action</Table.Th>
           <Table.Th>Reading</Table.Th>
           <Table.Th>Media</Table.Th>
